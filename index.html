@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PixelKeep.nl — retro fantasy tech, privacy, homelab, games en RPG. Under construction." />
+  <meta name="theme-color" content="#07140f" />
+  <title>PixelKeep.nl — under construction</title>
+  <link rel="icon" href="assets/privacy-crest.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <main class="shell">
+    <header class="hero" aria-labelledby="site-title">
+      <div class="scanlines" aria-hidden="true"></div>
+
+      <div class="kicker">
+        <span class="led"></span>
+        <span>BOOTING PIXELKEEP.NL</span>
+        <span class="terminal-status">BUILD CHANNEL: PREVIEW</span>
+      </div>
+
+      <img class="hero-logo" src="assets/pixelkeep-under-construction.png" alt="PixelKeep.nl under construction logo" />
+
+      <h1 id="site-title">PixelKeep.nl is under construction</h1>
+      <p class="lead">
+        Een persoonlijke keep voor retro gaming, fantasy/RPG, homelab, cloud, IT-architectuur en privacy-by-design.
+      </p>
+
+      <div class="cta-row">
+        <button id="music-toggle" class="btn primary" type="button" aria-pressed="false">
+          ▶ Start chiptune
+        </button>
+        <a class="btn ghost" href="#topics">Bekijk roadmap</a>
+      </div>
+
+      <div class="terminal" role="status" aria-live="polite">
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+          <strong>pixelkeep@keep:~</strong>
+        </div>
+        <pre id="terminal-output">init keep-gate... OK
+mount /homelab... OK
+load retro-sprites... OK
+enable privacy-shield... OK
+status: site forge in progress</pre>
+      </div>
+    </header>
+
+    <section id="topics" class="section">
+      <div class="section-title">
+        <p class="eyebrow">Roadmap</p>
+        <h2>Wat hier straks komt</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="card-icon">⌘</span>
+          <h3>Tech & Architecture</h3>
+          <p>Cloud, platform engineering, enterprise architecture, patterns, tooling en pragmatische bouwblokken.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">🛡</span>
+          <h3>Privacy & Security</h3>
+          <p>Privacy-by-design, self-hosting, zero-trust, dataminimalisatie en security controls zonder theater.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">🖥</span>
+          <h3>Homelab</h3>
+          <p>Servers, containers, GitOps, monitoring, storage, backups en lessons learned uit de eigen keep.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">🎮</span>
+          <h3>Games & Retro</h3>
+          <p>Amiga, C64, SNES/NES, pixel art, emulatie, retro workflows en nostalgie met moderne infra.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">⚔</span>
+          <h3>RPG & Fantasy</h3>
+          <p>Worldbuilding, tabletop/RPG, Magic: The Gathering vibes, items, characters en guild-style lore.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">◆</span>
+          <h3>PixelKeep Assets</h3>
+          <p>Logo’s, badges, mascots, clipart en webcomponenten in één consistente fantasy-tech stijl.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section forge">
+      <div class="section-title">
+        <p class="eyebrow">Build queue</p>
+        <h2>Assets in de forge</h2>
+      </div>
+
+      <div class="asset-grid">
+        <figure class="asset-card">
+          <img src="assets/privacy-crest.png" alt="PixelKeep privacy crest" />
+          <figcaption>Privacy crest</figcaption>
+        </figure>
+        <figure class="asset-card">
+          <img src="assets/homelab-cottage.png" alt="PixelKeep homelab cottage" />
+          <figcaption>Homelab cottage</figcaption>
+        </figure>
+        <figure class="asset-card">
+          <img src="assets/archive-vault.png" alt="PixelKeep archive vault" />
+          <figcaption>Archive vault</figcaption>
+        </figure>
+        <figure class="asset-card">
+          <img src="assets/tech-engineer.png" alt="PixelKeep tech engineer mascot" />
+          <figcaption>Tech engineer</figcaption>
+        </figure>
+        <figure class="asset-card">
+          <img src="assets/owl-scroll.png" alt="PixelKeep owl mascot" />
+          <figcaption>Wise owl</figcaption>
+        </figure>
+        <figure class="asset-card">
+          <img src="assets/fox-guardian.png" alt="PixelKeep fox guardian mascot" />
+          <figcaption>Fox guardian</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section demoscene">
+      <div>
+        <p class="eyebrow">Demoscene nod</p>
+        <h2>Retro terminal, modern keep</h2>
+        <p>
+          De pagina gebruikt scanlines, pixel panels, CRT glow, sprite-achtige assets en een browser-native chiptune loop.
+          Geen framework, geen trackers, geen CDN. Gewoon statisch, snel en hostbaar op GitHub Pages.
+        </p>
+      </div>
+      <img src="assets/pixelkeep-logo-retro.png" alt="Retro PixelKeep logo variant" />
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> PixelKeep.nl</span>
+      <span>TECH · PRIVACY · GAMES · RPG · HOMELAB</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
