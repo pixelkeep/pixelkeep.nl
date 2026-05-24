@@ -1,23 +1,36 @@
-# PixelKeep.nl GitHub Pages landing page
+# PixelKeep.nl — GitHub Pages refresh package
 
-Static under-construction page for PixelKeep.nl.
+Complete schone static-site package voor `https://pixelkeep.github.io/pixelkeep.nl/`.
 
-## Deploy to GitHub Pages
+## Inhoud
+- `index.html`
+- `styles.css`
+- `script.js`
+- `assets/` met logo's, web-assets, ASCII en ANSI banners
+- `ASSET-MANIFEST.json`
 
-1. Create a repository, for example `pixelkeep.nl` or `<username>.github.io`.
-2. Copy these files to the repository root:
-   - `index.html`
-   - `styles.css`
-   - `script.js`
-   - `assets/`
-3. Commit and push.
-4. In GitHub: **Settings → Pages → Deploy from branch → main / root**.
-5. Point `pixelkeep.nl` to GitHub Pages using your DNS provider.
+## Full refresh deploy
+Pak de ZIP uit en push de inhoud naar de root van je GitHub repository.
 
-## Notes
+```bash
+git clone https://github.com/pixelkeep/pixelkeep.nl.git
+cd pixelkeep.nl
+find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} \;
+cp -R /path/to/pixelkeep-site-refresh-flat-root/* .
+git add .
+git commit -m "Refresh PixelKeep under construction site"
+git push
+```
 
-- No framework.
-- No CDN.
-- No trackers.
-- Chiptune is generated in-browser with Web Audio and starts only after a click because browsers block autoplay.
-- The visual direction is retro demoscene / Amiga-era inspired without copying a specific group identity.
+GitHub Pages: `Settings -> Pages -> Deploy from branch -> main / root`.
+
+Gebruik na deploy een hard refresh: `Ctrl+F5` of `Cmd+Shift+R`.
+
+## Technische keuzes
+- Geen framework
+- Geen CDN
+- Geen trackers
+- Geen externe audiofiles
+- Chiptune via Web Audio, start pas na klik
+- Harde anti-overflow CSS voor brede logo-assets
+- Relatieve asset-paden, geschikt voor GitHub Pages subpath-hosting
