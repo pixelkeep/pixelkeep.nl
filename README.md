@@ -1,23 +1,22 @@
-# PixelKeep.nl GitHub Pages landing page
+# PixelKeep.nl under construction page v2
 
-Static under-construction page for PixelKeep.nl.
+Minimal dark-style GitHub Pages version.
 
-## Deploy to GitHub Pages
+## Files
 
-1. Create a repository, for example `pixelkeep.nl` or `<username>.github.io`.
-2. Copy these files to the repository root:
-   - `index.html`
-   - `styles.css`
-   - `script.js`
-   - `assets/`
-3. Commit and push.
-4. In GitHub: **Settings → Pages → Deploy from branch → main / root**.
-5. Point `pixelkeep.nl` to GitHub Pages using your DNS provider.
+- `index.html`
+- `styles.css`
+- `script.js`
+- `assets/`
 
 ## Notes
 
-- No framework.
-- No CDN.
-- No trackers.
-- Chiptune is generated in-browser with Web Audio and starts only after a click because browsers block autoplay.
-- The visual direction is retro demoscene / Amiga-era inspired without copying a specific group identity.
+- Uses only darker PixelKeep graphics.
+- Main graphics are PNGs with transparency processed for web use.
+- The chiptune loop is an original procedural Amiga/demoscene-inspired WAV.
+- The page tries to autoplay audio. Modern browsers may block audible autoplay until the first user interaction; the themed player button remains available as fallback.
+- No framework, no CDN, no trackers.
+
+## Deploy
+
+Copy the contents of this folder to the root of your GitHub Pages repository and enable Pages from the `main` branch.

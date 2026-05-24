@@ -1,151 +1,70 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="PixelKeep.nl — retro fantasy tech, privacy, homelab, games en RPG. Under construction." />
-  <meta name="theme-color" content="#07140f" />
-  <title>PixelKeep.nl — under construction</title>
+  <meta name="description" content="PixelKeep.nl — Tech, Privacy, Games, RPG, Homelab. Under construction." />
+  <meta name="theme-color" content="#05080a" />
+  <title>PixelKeep.nl</title>
   <link rel="icon" href="assets/privacy-crest.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <canvas id="starfield" aria-hidden="true"></canvas>
+  <canvas id="field" aria-hidden="true"></canvas>
 
-  <main class="shell">
-    <header class="hero" aria-labelledby="site-title">
-      <div class="scanlines" aria-hidden="true"></div>
-
-      <div class="kicker">
-        <span class="led"></span>
-        <span>BOOTING PIXELKEEP.NL</span>
-        <span class="terminal-status">BUILD CHANNEL: PREVIEW</span>
-      </div>
-
-      <img class="hero-logo" src="assets/pixelkeep-under-construction.png" alt="PixelKeep.nl under construction logo" />
-
-      <h1 id="site-title">PixelKeep.nl is under construction</h1>
-      <p class="lead">
-        Een persoonlijke keep voor retro gaming, fantasy/RPG, homelab, cloud, IT-architectuur en privacy-by-design.
-      </p>
-
-      <div class="cta-row">
-        <button id="music-toggle" class="btn primary" type="button" aria-pressed="false">
-          ▶ Start chiptune
-        </button>
-        <a class="btn ghost" href="#topics">Bekijk roadmap</a>
-      </div>
-
-      <div class="terminal" role="status" aria-live="polite">
-        <div class="terminal-bar">
-          <span></span><span></span><span></span>
-          <strong>pixelkeep@keep:~</strong>
+  <main class="page">
+    <section class="landing" aria-label="PixelKeep.nl under construction">
+      <div class="frame">
+        <div class="hud top">
+          <span class="dot"></span>
+          <span>PIXELKEEP.NL</span>
+          <span>BUILD MODE</span>
         </div>
-        <pre id="terminal-output">init keep-gate... OK
-mount /homelab... OK
-load retro-sprites... OK
-enable privacy-shield... OK
-status: site forge in progress</pre>
-      </div>
-    </header>
 
-    <section id="topics" class="section">
-      <div class="section-title">
-        <p class="eyebrow">Roadmap</p>
-        <h2>Wat hier straks komt</h2>
-      </div>
+        <img class="logo" src="assets/under-construction.png" alt="PixelKeep.nl under construction" />
 
-      <div class="cards">
-        <article class="card">
-          <span class="card-icon">⌘</span>
-          <h3>Tech & Architecture</h3>
-          <p>Cloud, platform engineering, enterprise architecture, patterns, tooling en pragmatische bouwblokken.</p>
-        </article>
+        <nav class="topics" aria-label="Planned topics">
+          <span>TECH</span>
+          <i></i>
+          <span>PRIVACY</span>
+          <i></i>
+          <span>HOMELAB</span>
+          <i></i>
+          <span>GAMES</span>
+          <i></i>
+          <span>RPG</span>
+          <i></i>
+          <span>RETRO</span>
+        </nav>
 
-        <article class="card">
-          <span class="card-icon">🛡</span>
-          <h3>Privacy & Security</h3>
-          <p>Privacy-by-design, self-hosting, zero-trust, dataminimalisatie en security controls zonder theater.</p>
-        </article>
+        <div class="orbital" aria-hidden="true">
+          <img src="assets/privacy-crest.png" alt="" />
+          <img src="assets/security-gate.png" alt="" />
+          <img src="assets/data-vault.png" alt="" />
+          <img src="assets/cloud-lock.png" alt="" />
+        </div>
 
-        <article class="card">
-          <span class="card-icon">🖥</span>
-          <h3>Homelab</h3>
-          <p>Servers, containers, GitOps, monitoring, storage, backups en lessons learned uit de eigen keep.</p>
-        </article>
+        <div class="audio-panel">
+          <button id="music" class="audio-button" type="button" aria-pressed="true">
+            <span class="bars" aria-hidden="true"><b></b><b></b><b></b><b></b></span>
+            <span id="music-label">STOP MODULE</span>
+          </button>
+          <span id="audio-state">AMIGA-STYLE LOOP</span>
+        </div>
 
-        <article class="card">
-          <span class="card-icon">🎮</span>
-          <h3>Games & Retro</h3>
-          <p>Amiga, C64, SNES/NES, pixel art, emulatie, retro workflows en nostalgie met moderne infra.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-icon">⚔</span>
-          <h3>RPG & Fantasy</h3>
-          <p>Worldbuilding, tabletop/RPG, Magic: The Gathering vibes, items, characters en guild-style lore.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-icon">◆</span>
-          <h3>PixelKeep Assets</h3>
-          <p>Logo’s, badges, mascots, clipart en webcomponenten in één consistente fantasy-tech stijl.</p>
-        </article>
+        <div class="hud bottom">
+          <span>NO TRACKERS</span>
+          <a class="github" href="https://github.com/pixelkeep" rel="me noopener" target="_blank" aria-label="GitHub PixelKeep">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.21.09 1.85 1.25 1.85 1.25 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.65c1.02 0 2.05.14 3.01.41 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/></svg>
+            github.com/pixelkeep
+          </a>
+          <span>STATIC SITE</span>
+        </div>
       </div>
     </section>
-
-    <section class="section forge">
-      <div class="section-title">
-        <p class="eyebrow">Build queue</p>
-        <h2>Assets in de forge</h2>
-      </div>
-
-      <div class="asset-grid">
-        <figure class="asset-card">
-          <img src="assets/privacy-crest.png" alt="PixelKeep privacy crest" />
-          <figcaption>Privacy crest</figcaption>
-        </figure>
-        <figure class="asset-card">
-          <img src="assets/homelab-cottage.png" alt="PixelKeep homelab cottage" />
-          <figcaption>Homelab cottage</figcaption>
-        </figure>
-        <figure class="asset-card">
-          <img src="assets/archive-vault.png" alt="PixelKeep archive vault" />
-          <figcaption>Archive vault</figcaption>
-        </figure>
-        <figure class="asset-card">
-          <img src="assets/tech-engineer.png" alt="PixelKeep tech engineer mascot" />
-          <figcaption>Tech engineer</figcaption>
-        </figure>
-        <figure class="asset-card">
-          <img src="assets/owl-scroll.png" alt="PixelKeep owl mascot" />
-          <figcaption>Wise owl</figcaption>
-        </figure>
-        <figure class="asset-card">
-          <img src="assets/fox-guardian.png" alt="PixelKeep fox guardian mascot" />
-          <figcaption>Fox guardian</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section demoscene">
-      <div>
-        <p class="eyebrow">Demoscene nod</p>
-        <h2>Retro terminal, modern keep</h2>
-        <p>
-          De pagina gebruikt scanlines, pixel panels, CRT glow, sprite-achtige assets en een browser-native chiptune loop.
-          Geen framework, geen trackers, geen CDN. Gewoon statisch, snel en hostbaar op GitHub Pages.
-        </p>
-      </div>
-      <img src="assets/pixelkeep-logo-retro.png" alt="Retro PixelKeep logo variant" />
-    </section>
-
-    <footer class="footer">
-      <span>© <span id="year"></span> PixelKeep.nl</span>
-      <span>TECH · PRIVACY · GAMES · RPG · HOMELAB</span>
-    </footer>
   </main>
 
+  <audio id="track" src="assets/pixelkeep-amiga-loop.wav" preload="auto" autoplay loop></audio>
   <script src="script.js"></script>
 </body>
 </html>
