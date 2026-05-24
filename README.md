@@ -1,22 +1,17 @@
-# PixelKeep.nl under construction page v2
+# PixelKeep.nl GitHub Pages landing page v3
 
-Minimal dark-style GitHub Pages version.
+Restored layout direction:
+- gradient/starfield background
+- Linux-style terminal window
+- compact topic words only
+- dark style only
+- small bottom music control
+- GitHub footer link
 
-## Files
+Audio:
+- The page attempts autoplay.
+- Audible autoplay is blocked by most modern browsers until a user gesture. The button is the fallback.
+- The music is an original calmer Amiga/RPG-module-inspired loop, generated for this site.
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/`
-
-## Notes
-
-- Uses only darker PixelKeep graphics.
-- Main graphics are PNGs with transparency processed for web use.
-- The chiptune loop is an original procedural Amiga/demoscene-inspired WAV.
-- The page tries to autoplay audio. Modern browsers may block audible autoplay until the first user interaction; the themed player button remains available as fallback.
-- No framework, no CDN, no trackers.
-
-## Deploy
-
-Copy the contents of this folder to the root of your GitHub Pages repository and enable Pages from the `main` branch.
+Deploy:
+Copy everything in this folder to the root of your GitHub Pages repository.
