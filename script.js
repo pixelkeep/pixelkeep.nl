@@ -34,117 +34,58 @@ function drawStars() {
 drawStars();
 
 const terminal = document.getElementById("terminal-output");
-
-const boot = [
-`  ____  _          _ _  __                 _`,
-` |  _ \\(_)_  _____| | |/ /___  ___ _ __  | |`,
-` | |_) | \\ \\/ / _ \\ | ' // _ \\/ _ \\ '_ \\ | |`,
-` |  __/| |>  <  __/ | . \\  __/  __/ |_) ||_|`,
-` |_|   |_/_/\\_\\___|_|_|\\_\\___|\\___| .__/ (_)`,
-`                                  |_|`,
-``,
-`[CONNECT 57600] PixelKeep BBS / node-01`,
-`login: guest`,
-`password: ********`,
-`last login: never — new node provisioned`,
-``,
-`$ uname -a`,
-`pixelkeep 0.1.0-retro #1 SMP AMIGA-ish x86_64 GNU/Linux`,
-`$ mount /dev/keep /mnt/pixelkeep`,
-`/mnt/pixelkeep mounted read-only until launch`,
-`$ rsync -av tech/ privacy/ homelab/ games/ rpg/ /site/`,
-`sending incremental file list`,
-`tech/architecture-patterns.md`,
-`privacy/privacy-by-design.md`,
-`homelab/services-and-backups.md`,
-`games/retro-notes.md`,
-`rpg/items-and-lore.md`,
-``,
-`$ ./build-site --target github-pages`,
-`compiling sprites... OK`,
-`packing modules... OK`,
-`checking trackers... NONE`,
-`status: UNDER CONSTRUCTION`
+const lines = [
+  "scan content backlog... TECH / PRIVACY / HOMELAB / GAMES / RPG",
+  "compile retro module... READY",
+  "calibrate CRT glow... OK",
+  "sync asset forge... OK",
+  "publish target... GitHub Pages",
+  "privacy stance... no trackers, no CDN"
 ];
-
-terminal.textContent = "";
-let bootIndex = 0;
-function typeBoot() {
-  if (bootIndex < boot.length) {
-    terminal.textContent += (bootIndex ? "\\n" : "") + boot[bootIndex];
-    terminal.scrollTop = terminal.scrollHeight;
-    bootIndex++;
-    setTimeout(typeBoot, bootIndex < 7 ? 45 : 160);
-  }
-}
-typeBoot();
-
-const liveLines = [
-  "$ tail -f /var/log/pixelkeep/build.log",
-  "GET /topics/tech ................. 200 cached",
-  "GET /topics/privacy ............. 200 cached",
-  "GET /topics/homelab ............. 200 cached",
-  "GET /topics/games ............... 200 cached",
-  "GET /topics/rpg ................. 200 cached",
-  "bbs: downloading content manifest [####------] 42%",
-  "bbs: downloading content manifest [########--] 86%",
-  "bbs: verifying checksum ......... OK",
-  "cron: next build window scheduled",
-];
-
+let lineIndex = 0;
 setInterval(() => {
-  if (bootIndex < boot.length) return;
-  terminal.textContent += "\\n" + liveLines[Math.floor(Math.random() * liveLines.length)];
-  const all = terminal.textContent.split("\\n");
-  if (all.length > 22) terminal.textContent = all.slice(-22).join("\\n");
-  terminal.scrollTop = terminal.scrollHeight;
-}, 2800);
+  terminal.textContent += `\n${lines[lineIndex]}`;
+  lineIndex = (lineIndex + 1) % lines.length;
+  const all = terminal.textContent.split("\n");
+  if (all.length > 10) terminal.textContent = all.slice(-10).join("\n");
+}, 2600);
 
 const audio = document.getElementById("track");
 const btn = document.getElementById("music-toggle");
 const label = document.getElementById("music-label");
-const select = document.getElementById("track-select");
 
 async function tryAutoplay() {
-  audio.volume = 0.36;
+  audio.volume = 0.38;
   try {
     await audio.play();
     btn.setAttribute("aria-pressed", "true");
-    label.textContent = "STOP";
+    label.textContent = "STOP MUSIC";
   } catch {
+    // Modern browsers usually block audible autoplay. The button is the graceful fallback.
     btn.setAttribute("aria-pressed", "false");
-    label.textContent = "START";
+    label.textContent = "START MUSIC";
   }
 }
 
 btn.addEventListener("click", async () => {
   if (audio.paused) {
-    audio.volume = 0.36;
+    audio.volume = 0.38;
     try {
       await audio.play();
       btn.setAttribute("aria-pressed", "true");
-      label.textContent = "STOP";
+      label.textContent = "STOP MUSIC";
     } catch {
-      label.textContent = "BLOCKED";
+      label.textContent = "AUDIO BLOCKED";
     }
   } else {
     audio.pause();
     btn.setAttribute("aria-pressed", "false");
-    label.textContent = "START";
-  }
-});
-
-select.addEventListener("change", async () => {
-  const wasPlaying = !audio.paused;
-  audio.src = select.value;
-  audio.load();
-  if (wasPlaying) {
-    try { await audio.play(); } catch {}
+    label.textContent = "START MUSIC";
   }
 });
 
 document.addEventListener("visibilitychange", () => {
-  audio.volume = document.hidden ? 0.16 : 0.36;
+  audio.volume = document.hidden ? 0.18 : 0.38;
 });
 
 tryAutoplay();

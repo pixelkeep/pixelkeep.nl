@@ -1,15 +1,17 @@
-# PixelKeep.nl GitHub Pages landing page v4
+# PixelKeep.nl GitHub Pages landing page v3
 
-Changes:
-- Restored the original gradient/starfield look.
-- Keeps the Linux/BBS-style terminal window with login/build/download text.
-- Keeps only compact topic words under the logo.
-- Uses darker style only.
-- Includes three original selectable Amiga/RPG module-inspired loops.
-- Small footer music player and GitHub link.
+Restored layout direction:
+- gradient/starfield background
+- Linux-style terminal window
+- compact topic words only
+- dark style only
+- small bottom music control
+- GitHub footer link
 
-Autoplay:
-Modern browsers often block audible autoplay until user interaction. The page attempts autoplay and falls back to the small START button.
+Audio:
+- The page attempts autoplay.
+- Audible autoplay is blocked by most modern browsers until a user gesture. The button is the fallback.
+- The music is an original calmer Amiga/RPG-module-inspired loop, generated for this site.
 
-Royalty-free music:
-Use the included original loops by default. If replacing with external tracker/chiptune music, verify the license per track.
+Deploy:
+Copy everything in this folder to the root of your GitHub Pages repository.
