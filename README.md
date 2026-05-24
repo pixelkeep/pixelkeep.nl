@@ -1,36 +1,15 @@
-# PixelKeep.nl — GitHub Pages refresh package
+# PixelKeep.nl GitHub Pages landing page v4
 
-Complete schone static-site package voor `https://pixelkeep.github.io/pixelkeep.nl/`.
+Changes:
+- Restored the original gradient/starfield look.
+- Keeps the Linux/BBS-style terminal window with login/build/download text.
+- Keeps only compact topic words under the logo.
+- Uses darker style only.
+- Includes three original selectable Amiga/RPG module-inspired loops.
+- Small footer music player and GitHub link.
 
-## Inhoud
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/` met logo's, web-assets, ASCII en ANSI banners
-- `ASSET-MANIFEST.json`
+Autoplay:
+Modern browsers often block audible autoplay until user interaction. The page attempts autoplay and falls back to the small START button.
 
-## Full refresh deploy
-Pak de ZIP uit en push de inhoud naar de root van je GitHub repository.
-
-```bash
-git clone https://github.com/pixelkeep/pixelkeep.nl.git
-cd pixelkeep.nl
-find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} \;
-cp -R /path/to/pixelkeep-site-refresh-flat-root/* .
-git add .
-git commit -m "Refresh PixelKeep under construction site"
-git push
-```
-
-GitHub Pages: `Settings -> Pages -> Deploy from branch -> main / root`.
-
-Gebruik na deploy een hard refresh: `Ctrl+F5` of `Cmd+Shift+R`.
-
-## Technische keuzes
-- Geen framework
-- Geen CDN
-- Geen trackers
-- Geen externe audiofiles
-- Chiptune via Web Audio, start pas na klik
-- Harde anti-overflow CSS voor brede logo-assets
-- Relatieve asset-paden, geschikt voor GitHub Pages subpath-hosting
+Royalty-free music:
+Use the included original loops by default. If replacing with external tracker/chiptune music, verify the license per track.
