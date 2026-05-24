@@ -1,15 +1,23 @@
-# PixelKeep.nl GitHub Pages landing page v4
+# PixelKeep.nl GitHub Pages landing page
 
-Changes:
-- Restored the original gradient/starfield look.
-- Keeps the Linux/BBS-style terminal window with login/build/download text.
-- Keeps only compact topic words under the logo.
-- Uses darker style only.
-- Includes three original selectable Amiga/RPG module-inspired loops.
-- Small footer music player and GitHub link.
+Static under-construction page for PixelKeep.nl.
 
-Autoplay:
-Modern browsers often block audible autoplay until user interaction. The page attempts autoplay and falls back to the small START button.
+## Deploy to GitHub Pages
 
-Royalty-free music:
-Use the included original loops by default. If replacing with external tracker/chiptune music, verify the license per track.
+1. Create a repository, for example `pixelkeep.nl` or `<username>.github.io`.
+2. Copy these files to the repository root:
+   - `index.html`
+   - `styles.css`
+   - `script.js`
+   - `assets/`
+3. Commit and push.
+4. In GitHub: **Settings → Pages → Deploy from branch → main / root**.
+5. Point `pixelkeep.nl` to GitHub Pages using your DNS provider.
+
+## Notes
+
+- No framework.
+- No CDN.
+- No trackers.
+- Chiptune is generated in-browser with Web Audio and starts only after a click because browsers block autoplay.
+- The visual direction is retro demoscene / Amiga-era inspired without copying a specific group identity.
