@@ -37,10 +37,8 @@ const terminal = document.getElementById("terminal-output");
 const lines = JSON.parse(document.getElementById("terminal-lines").textContent);
 let lineIndex = 0;
 setInterval(() => {
-  terminal.textContent += `\n${lines[lineIndex]}`;
+  terminal.textContent += (terminal.textContent ? "\n" : "") + lines[lineIndex];
   lineIndex = (lineIndex + 1) % lines.length;
-  const all = terminal.textContent.split("\n");
-  if (all.length > 18) terminal.textContent = all.slice(-18).join("\n");
 }, 2600);
 
 const audio = document.getElementById("track");
