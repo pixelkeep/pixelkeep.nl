@@ -34,20 +34,13 @@ function drawStars() {
 drawStars();
 
 const terminal = document.getElementById("terminal-output");
-const lines = [
-  "scan content backlog... TECH / PRIVACY / HOMELAB / GAMES / RPG",
-  "compile retro module... READY",
-  "calibrate CRT glow... OK",
-  "sync asset forge... OK",
-  "publish target... GitHub Pages",
-  "privacy stance... no trackers, no CDN"
-];
+const lines = JSON.parse(document.getElementById("terminal-lines").textContent);
 let lineIndex = 0;
 setInterval(() => {
   terminal.textContent += `\n${lines[lineIndex]}`;
   lineIndex = (lineIndex + 1) % lines.length;
   const all = terminal.textContent.split("\n");
-  if (all.length > 10) terminal.textContent = all.slice(-10).join("\n");
+  if (all.length > 18) terminal.textContent = all.slice(-18).join("\n");
 }, 2600);
 
 const audio = document.getElementById("track");
@@ -61,7 +54,6 @@ async function tryAutoplay() {
     btn.setAttribute("aria-pressed", "true");
     label.textContent = "STOP MUSIC";
   } catch {
-    // Modern browsers usually block audible autoplay. The button is the graceful fallback.
     btn.setAttribute("aria-pressed", "false");
     label.textContent = "START MUSIC";
   }
