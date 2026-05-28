@@ -1,11 +1,11 @@
-# pixelkeep.nl
+# www.pixelkeep.nl
 
 [![HTML](https://img.shields.io/badge/HTML-static%20site-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS-vanilla-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-222222?style=for-the-badge&logo=github&logoColor=white)](https://pages.github.com)
-[![Privacy](https://img.shields.io/badge/Privacy-no%20trackers%2C%20no%20CDN-35f2a5?style=for-the-badge)](https://pixelkeep.nl)
+[![Privacy](https://img.shields.io/badge/Privacy-no%20trackers%2C%20no%20CDN-35f2a5?style=for-the-badge)](https://www.pixelkeep.nl)
 
-Personal site for [pixelkeep.nl](https://pixelkeep.nl). Static, no dependencies, no trackers, no CDN.
+Personal site for [www.pixelkeep.nl](https://www.pixelkeep.nl). Static, no dependencies, no trackers, no CDN.
 
 Deployed via GitHub Pages. Under active construction.
 
